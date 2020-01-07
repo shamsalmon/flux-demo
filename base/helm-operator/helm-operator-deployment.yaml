@@ -72,6 +72,32 @@ spec:
       #   emptyDir: {}
 
       containers:
+      - name: tiller
+        image: gcr.io/kubernetes-helm/tiller:v2.14.3
+        args:
+        - --listen=localhost:44134
+        - --probe-listen=:44135
+        - --storage=secret
+        ports:
+        - containerPort: 44135
+          name: http
+        livenessProbe:
+          httpGet:
+            path: /liveness
+            port: 44135
+          initialDelaySeconds: 1
+          timeoutSeconds: 1
+        readinessProbe:
+          httpGet:
+            path: /readiness
+            port: 44135
+          initialDelaySeconds: 1
+          timeoutSeconds: 1
+        env:
+        - name: TILLER_NAMESPACE
+          value: flux-system
+        - name: TILLER_HISTORY_MAX
+          value: "10"
       - name: flux-helm-operator
         # There are no ":latest" images for helm-operator. Find the most recent
         # release or image version at https://hub.docker.com/r/weaveworks/helm-operator/tags
@@ -117,7 +143,8 @@ spec:
         #   readOnly: true
         args:
         # How to find Tiller
-        - --tiller-namespace=kube-system
+        - --tiller-ip=localhost
+        - --tiller-port=44134
         # Comment out to to establish validated TLS connections against Tiller
         # - --tiller-tls-ca-cert-path=/etc/fluxd/helm-ca/ca.crt
         # - --tiller-tls-enable=true

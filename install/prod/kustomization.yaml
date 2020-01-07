@@ -4,6 +4,7 @@ resources:
   - rbac.yaml
   - psp.yaml
 bases:
+  - ../helm
   - ../../base/flux/
   - ../../base/memcached/
   - ../../base/helm-operator
