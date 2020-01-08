@@ -3,3 +3,7 @@ kind: Kustomization
 
 bases:
   - ../bases/argocd/
+
+resources:
+  - namespaces/infrastructure.yaml
+  - namespaces/operations.yaml

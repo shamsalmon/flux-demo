@@ -3,6 +3,7 @@ metadata:
   annotations:
     fluxcd.io/automated: "false"
     name: cert-manager
+  namespace: certmanager
 spec:
   releaseName: nginx-ingress
   chart:
