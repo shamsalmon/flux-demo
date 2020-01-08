@@ -1,0 +1,12 @@
+kind: HelmRelease
+metadata:
+  annotations:
+    fluxcd.io/automated: "false"
+    name: nginx-ingress
+spec:
+  values:
+    targetPorts:
+      http: http
+      https: http
+    type: LoadBalancer
+    annotations: {}

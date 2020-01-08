@@ -1,0 +1,13 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: opendistro-es
+  namespace: operations
+  annotations:
+    fluxcd.io/automated: "false"
+spec:
+  releaseName: opendistro-es
+  chart:
+    git: git@github.com:shamsalmon/flux-demo
+    path: charts/opendistro-es
+    ref: master
