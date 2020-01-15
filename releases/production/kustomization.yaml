@@ -6,4 +6,4 @@ resources:
   - ingress.yaml
   - deployment.yaml
   - canary.yaml
-  - service.yaml
+#  - service.yaml
