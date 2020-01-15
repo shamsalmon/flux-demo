@@ -6,6 +6,7 @@ resources:
   - rbac.yaml
   - crd.yaml
   - deployment.yaml
+namespace: linkerd
 images:
   - name: weaveworks/flagger
     newTag: 0.21.0
