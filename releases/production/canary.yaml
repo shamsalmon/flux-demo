@@ -58,4 +58,4 @@ spec:
         type: rollout
         url: http://flagger-loadtester.project1/
         metadata:
-          cmd: "hey -z 2m -q 10 -c 2 http://podinfo-canary.project1:9898/"
+          cmd: "hey -z 2m -q 10 -c 2 http://samstesting.entech.local:9898/"
