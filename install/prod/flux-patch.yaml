@@ -15,5 +15,6 @@ spec:
             - --sync-interval=5m
             - --ssh-keygen-dir=/var/fluxd/keygen
             - --git-branch=master
-            - --git-path=clusters/common
+            - --git-path=clusters/common,releases/production
             - --git-url=git@github.com:shamsalmon/flux-demo.git
+            - --git-label=prod-flux-sync

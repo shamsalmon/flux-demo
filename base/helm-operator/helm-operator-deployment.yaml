@@ -65,11 +65,11 @@ spec:
       # and providing a cache directory. The latter is needed because
       # mounting the former will make the cache/ directory read-only.
       #
-      # - name: repositories-yaml
-      #   secret:
-      #     secretName: flux-helm-repositories
-      # - name: repositories-cache
-      #   emptyDir: {}
+       - name: repositories-yaml
+         secret:
+           secretName: flux-helm-repositories
+       - name: repositories-cache
+         emptyDir: {}
 
       containers:
       - name: tiller
@@ -131,8 +131,8 @@ spec:
         #   readOnly: true
         # - name: git-key
         #   mountPath: /etc/fluxd/ssh
-        # - name: repositories-yaml
-        #   mountPath: /var/fluxd/helm/repository
+         - name: repositories-yaml
+           mountPath: /var/fluxd/helm/repository
         # - name: repositories-cache
         #   mountPath: /var/fluxd/helm/repository/cache
         # - name: helm-tls-certs

@@ -1,0 +1,4 @@
+namespace: project1
+
+resources:
+  - deployment.yaml

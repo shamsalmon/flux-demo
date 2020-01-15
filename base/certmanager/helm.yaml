@@ -1,12 +1,13 @@
 kind: HelmRelease
+apiVersion: helm.fluxcd.io/v1
 metadata:
   annotations:
     fluxcd.io/automated: "false"
-    name: cert-manager
+  name: cert-manager
   namespace: certmanager
 spec:
-  releaseName: nginx-ingress
+  releaseName: cert-manager
   chart:
     repository: https://charts.jetstack.io
     name: cert-manager
-    version: 0.12
+    version: v0.1.0

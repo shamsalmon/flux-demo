@@ -3,7 +3,14 @@ kind: Kustomization
 bases:
   - ../../base/argocd/
   - ../../base/nginx-ingress/
+  - ../../base/certmanager
+  - https://github.com/weaveworks/flagger/kustomize/linkerd?ref=0.21.0
 
 resources:
   - namespaces/infrastructure.yaml
   - namespaces/operations.yaml
+  - namespaces/certmanager.yaml
+  - namespaces/project1.yaml
+
+patchesStrategicMerge:
+  - linkerd-patch.yaml
