@@ -1,4 +1,8 @@
 namespace: project1
 
+bases:
+  - ../../base/tester
 resources:
+  - ingress.yaml
   - deployment.yaml
+  - canary.yaml
