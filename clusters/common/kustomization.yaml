@@ -4,7 +4,7 @@ bases:
   - ../../base/argocd/
   - ../../base/nginx-ingress/
   - ../../base/certmanager
-  - https://github.com/weaveworks/flagger/kustomize/linkerd?ref=0.21.0
+  - ../../base/flagger
 
 resources:
   - namespaces/infrastructure.yaml

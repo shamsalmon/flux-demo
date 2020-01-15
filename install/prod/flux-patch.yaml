@@ -7,6 +7,7 @@ spec:
     spec:
       containers:
         - name: flux
+          image: fluxcd/flux:1.17.1
           args:
             - --manifest-generation=true
             - --memcached-hostname=flux-memcached.flux-system
