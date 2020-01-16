@@ -20,8 +20,6 @@ spec:
   service:
     # ClusterIP port number
     port: 9898
-    # container port number or name (optional)
-    targetPort: 9898
   canaryAnalysis:
     # schedule interval (default 60s)
     interval: 30s

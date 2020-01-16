@@ -9,8 +9,13 @@ spec:
   chart:
     repository: https://kubernetes-charts.storage.googleapis.com/
     name: nginx-ingress
-    version: 1.28.0
+    version: 1.29.2
   values:
+    controller:
+      name: controller
+      image:
+        repository: quay.io/kubernetes-ingress-controller/nginx-ingress-controller
+        tag: "0.27.0"
     targetPorts:
       http: http
       https: http
