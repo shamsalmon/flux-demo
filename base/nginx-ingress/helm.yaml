@@ -21,3 +21,4 @@ spec:
       https: http
     type: LoadBalancer
     annotations: {}
+    ingressClass: nginx
